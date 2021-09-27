@@ -21,6 +21,11 @@ public class Level1 extends World
         prepare();
     }
     
+    public void act()
+    {
+       spawn();
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -54,6 +59,14 @@ public class Level1 extends World
         Gem gem3 = new Gem();
         addObject(gem3,704,211);
         removeObject(gem2);
+    }
+    
+    private void spawn()
+    {
+       if(Math.random() < 0.0025)
+       {
+           addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
+       }
     }
     
    
