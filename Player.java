@@ -17,7 +17,7 @@ public class Player extends Actor
     private float yVelocity;
     private boolean isWalking;
     private boolean isJumping;
-    private boolean isFAcingLeft;
+    private boolean isFacingLeft;
     private final GreenfootImage[] WALK_ANIMATION;
     private final GreenfootImage STANDING_IMAGE;
     private final float JUMP_FORCE;
@@ -76,7 +76,7 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("right"))
         {
             if(isFacingLeft)
-            {
+            {       
                 mirrorImages();
             }
             isWalking = true;
@@ -95,7 +95,7 @@ public class Player extends Actor
           move(-speed);
       }
       
-      if(!(Greenfoot.isKeyDown("right") // Greenfoot.isKeyDown("left")))
+      if(!(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("left")))
       {
         isWalking = false;
       }
@@ -103,7 +103,7 @@ public class Player extends Actor
     } 
     private void jump() 
     {
-      if(Greenfoor.isKeyDown("space") && isOnGround())
+      if(Greenfoot.isKeyDown("space") && isOnGround())
       {
         yVelocity = JUMP_FORCE;
         isJumping = true;
@@ -112,11 +112,11 @@ public class Player extends Actor
       if(isJumping && yVelocity > 0)
       {
        setLocation(getX(), getY() - (int) yVelocity);
-       yVelocity -=GRAVITY
+       yVelocity -=GRAVITY;
       }
       else
       {
-        isJuming = false;
+        isJumping = false;
       }
     }
     
@@ -145,12 +145,17 @@ public class Player extends Actor
         }
         frame++;
     }
-    private void onCollision() {}
+    
+    private void onCollision() 
+    {
+    
+    }
+    
     private void mirrorImages() 
     {
         for(int i = 0; i < WALK_ANIMATION.length; i++)
       { 
-          WALK_ANIMATION{i}.mirrorHorizontally();
+          WALK_ANIMATION[i].mirrorHorizontally();
       }
     }
     
@@ -158,8 +163,8 @@ public class Player extends Actor
    
     private boolean isOnGround()
     {
-      Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platform.class);\
-      return ground != null:
+      Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platform.class);
+      return ground != null;
     }
     
 }

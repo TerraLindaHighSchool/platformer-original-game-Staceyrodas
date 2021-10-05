@@ -20,8 +20,7 @@ public class Level1 extends World
         super(1200, 800, 1, false); 
         prepare();
     }
-    
-    public void act()
+      public void act()
     {
        spawn();
     }
