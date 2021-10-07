@@ -20,10 +20,6 @@ public class Level1 extends World
         super(1200, 800, 1, false); 
         prepare();
     }
-      public void act()
-    {
-       spawn();
-    }
     
     /**
      * Prepare the world for the start of the program.
@@ -58,6 +54,10 @@ public class Level1 extends World
         Gem gem3 = new Gem();
         addObject(gem3,704,211);
         removeObject(gem2);
+        SmBrickWall smBrickWall5 = new SmBrickWall();
+        addObject(smBrickWall5,154,218);
+        SmBrickWall smBrickWall6 = new SmBrickWall();
+        addObject(smBrickWall6,569,123);
     }
     
     private void spawn()
