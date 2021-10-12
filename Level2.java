@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends World
 {
-    /**
-     * Constructor for objects of class BrickWorld.
-     * 
-     */
+    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
     public Level2()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
