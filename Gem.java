@@ -14,6 +14,6 @@ public class Gem extends Collectable
      */
     public void act()
     {
-        // Add your action code here.
+       
     }
 }

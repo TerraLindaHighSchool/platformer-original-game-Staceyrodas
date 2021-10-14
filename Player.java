@@ -90,7 +90,7 @@ public class Player extends Actor
             if(!MUSIC.isPlaying())
             {
               MUSIC.playLoop();
-              Greenfoot.playSound("collectable");
+             
 
             }
             
@@ -125,8 +125,9 @@ public class Player extends Actor
       if(Greenfoot.isKeyDown("space") && isOnGround())
       {
         yVelocity = JUMP_FORCE;
-        isJumping = true;
-      }
+        isJumping = true; 
+        Greenfoot.playSound("jump.wav");
+    }
       
       if(isJumping && yVelocity > 0)
       {
@@ -136,8 +137,9 @@ public class Player extends Actor
       else
       {
         isJumping = false;
+        
       }
-      Greenfoot.playSound("jump");
+      
     }
     
     private void fall() 
@@ -190,7 +192,7 @@ public class Player extends Actor
        removeTouching(Obstacle.class);
        getWorld().removeObject(health[healthCount - 1]);
        healthCount--;
-       Greenfoot.playSound("explosionSmall");
+       Greenfoot.playSound("explosionSmall.wav");
      }
      
      // hit platform but not on ground
