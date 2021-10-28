@@ -185,6 +185,7 @@ public class Player extends Actor
         } 
         Greenfoot.setWorld(world);
         Greenfoot.playSound("door_open");
+    
       }
       
       if(isTouching(Obstacle.class))

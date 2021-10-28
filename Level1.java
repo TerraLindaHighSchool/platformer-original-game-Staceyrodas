@@ -37,7 +37,7 @@ public class Level1 extends World
         Door door = new Door();
         addObject(door,447,58);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH,
-                                   MAX_POWERUP, NEXT_LEVEL, MUSIC);
+                MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,468,538);// number may vary 
         door.setLocation(1164,59);
         Gem gem = new Gem();
@@ -65,6 +65,10 @@ public class Level1 extends World
         addObject(smBrickWall5,154,218);
         SmBrickWall smBrickWall6 = new SmBrickWall();
         addObject(smBrickWall6,569,123);
+        removeObject(gem);
+        bomb.act();
+        removeObject(bomb);
+        removeObject(gem3);
     }
     
     private void spawn()
